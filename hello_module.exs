@@ -1,5 +1,9 @@
 defmodule HelloModule do
+  import IO, only: [puts: 1]
+
   def say_hello do
-    IO.puts 'Hello, World!'
+    puts 'Hello, World!'
   end
 end
+
+HelloModule.say_hello
