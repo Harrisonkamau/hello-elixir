@@ -1,4 +1,5 @@
 # Introduction to Elixir
+All functions herein don't have a `return` keyword. Elixir, just like Ruby, returns the last statement in a fuction.
 
 ### Running modules
 ```sh
