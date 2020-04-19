@@ -11,3 +11,5 @@ defmodule Number do
     info "Is #{num} odd? #{is_odd(num)}"
   end
 end
+
+Number.odd?2
