@@ -3,6 +3,9 @@ defmodule List.Enum do
 
   def first(list) do
     # return the first item in the list using the `head` (hd) buil-in list method
-    info "First item in the list is: #{hd(list)}"
+    info "First item in the list is: '#{hd(list)}'"
   end
 end
+
+todos = ['Take Breakfast', 'Workout', 'Learn Elixir', 'Write some modules']
+List.Enum.first(todos)
