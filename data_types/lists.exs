@@ -1,5 +1,5 @@
 defmodule MyList do
-  import Enum
+  import Enum, only: [map: 2]
 
   def map(list) do
     # return a list with squared items
