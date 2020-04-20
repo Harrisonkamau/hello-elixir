@@ -4,4 +4,8 @@ defmodule Logger do
   def info(message) do
     puts "[LOGGER - INFO]#{message}"
   end
+
+  def error(message) do
+    IO.puts(:stderr, message)
+  end
 end
