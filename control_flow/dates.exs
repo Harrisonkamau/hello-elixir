@@ -20,4 +20,4 @@ Dates.describe_date({ 12, 12, 1967 }) # Happy Jamhuri Day!
 Dates.describe_date({ 25, 12, 2017 }) # Merry christmas!
 Dates.describe_date({ 20, 10, 2019 }) # Happy Madaraka Day!
 Dates.describe_date({ 20, 09, 2019 }) # It's a brand new month
-Dates.describe_date({ 20, 14, 2019 }) # It's a brand new month
+Dates.describe_date({ 20, 14, 2019 }) # Invalid date - since month > 12
