@@ -1,7 +1,12 @@
 # Introduction to Elixir
 All functions herein don't have a `return` keyword. Elixir, just like Ruby, returns the last statement in a fuction.
 
-Also, `''` are not strings in Elixir, but `charlist` (List of characters). A true string in Elixir is denoted by double quotes: `""`
+Also, `''` are not strings in Elixir, but `charlist` (List of characters). A true string in Elixir is denoted by double quotes: `""`. To verify this, fire up the Interactive Elixir console: `iex`:
+
+```elixir
+iex > i 'hello' # type is List
+iex > i "hello" # type is String
+```
 
 ### Running modules
 ```sh
