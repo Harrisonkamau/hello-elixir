@@ -10,6 +10,11 @@ defmodule MyList do
     IO.puts total
   end
 
+  def square_list(list) do
+    new_list = Enum.map(list, &(&1 * &1))
+    print(new_list, "Squared list")
+  end
+
   # private function
   defp square(num) do
     num * num
@@ -28,3 +33,4 @@ end
 nums = [1, 2, 3, 4]
 MyList.map(nums)
 MyList.reduce(nums)
+MyList.square_list(nums)
