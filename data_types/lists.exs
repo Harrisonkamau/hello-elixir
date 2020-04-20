@@ -1,10 +1,13 @@
 defmodule MyList do
-  import Enum, only: [map: 2]
-
   def map(list) do
     # return a list with squared items
-    squares = map(list, &square/1)
+    squares = Enum.map(list, &square/1)
     print(squares, "Mapped list")
+  end
+
+  def reduce(list) do
+    total = Enum.reduce(list, 0, &sum/2)
+    IO.puts total
   end
 
   # private function
@@ -15,7 +18,13 @@ defmodule MyList do
   defp print(list, label) do
     IO.inspect(list, label: label)
   end
+
+  defp sum(x, y) do
+    x + y
+  end
 end
 
 
-MyList.map([1, 2, 3, 4])
+nums = [1, 2, 3, 4]
+MyList.map(nums)
+MyList.reduce(nums)
