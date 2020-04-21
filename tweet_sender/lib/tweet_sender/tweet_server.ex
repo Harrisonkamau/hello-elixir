@@ -1,8 +1,12 @@
 defmodule TweetSender.TweetServer do
   use GenServer
 
+  @moduledoc """
+  server callbacks
+    start_link/1
+  """
   def start_link(_) do
-    GenServer.start_link(__MODULE__, :ok, name: :tweet_server)
+    GenServer.start_link(__MODULE__, :ok, name: :main_tweet_server)
   end
 
   def init(:ok) do
@@ -10,16 +14,27 @@ defmodule TweetSender.TweetServer do
     {:ok, %{}}
   end
 
-  def handle_cast({ :tweet, tweet }) do
+  def handle_cast({ :tweet, tweet }, _) do
     TweetSender.Tweet.send(tweet)
-    {:noreply, %{}}
+    { :noreply, %{} }
   end
 
   def tweet(tweet) do
     # this method is registerd on line #13 as :tweet
     # this will help us make this call: `TweetSender.TweetServer.tweet
-    GenServer.cast(:tweet_server, { :tweet, tweet })
+    GenServer.cast(:main_tweet_server, { :tweet, tweet })
+  end
+
+   @doc """
+    Looks up the bucket pid for `name` stored in `server`.
+
+    Returns `{:ok, pid}` if the bucket exists, `:error` otherwise.
+    """
+  def lookup(server, name) do
+    GenServer.call(server, { :lookup, name })
   end
 end
 
-# Process.whereis(:tweet_server)
+# check the server pid with:
+# Process.whereis(:main_tweet_server)
+# TweetSender.TweetServer.tweet("Hello, @ChegeHarrison")
