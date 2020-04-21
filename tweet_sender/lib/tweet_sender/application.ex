@@ -7,6 +7,7 @@ defmodule TweetSender.Application do
 
   def start(_type, _args) do
     children = [
+      TweetSender.TweetServer,
       TweetSender.Scheduler
     ]
 
