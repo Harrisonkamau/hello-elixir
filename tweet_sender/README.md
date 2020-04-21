@@ -29,3 +29,24 @@ Load the `TweetSender.Tweet` module by running: `cd("lib/tweet_sender")`
 **Send Tweet**
 
 In the `iex` call, `TweetSender.Tweet.send("Your tweet string")` and then check your Twitter profile to check if it was sent.
+
+## Scheduler
+The Scheduler sends a random tweet, obtained from `priv/tweets.txt` every minute. Since the app runs on Supervisor, it can still send tweets if a Process is killed.
+
+try this, by firing the `iex` and running these commands:
+```elixir
+# check the server pid
+iex> Process.whereis(:main_tweet_server)
+
+# Send tweet manually:
+iex> TweetSender.TweetServer.tweet("Hello, world!")
+# once you see the :ok - which means the server sent a tweet successfully,
+
+# Kill the process
+Process.whereis(:main_tweet_server) |> Process.exit(:kill)
+
+# try resending the tweet
+TweetSender.TweetServer.tweet("Hello, world!")
+
+# the tweet should send since, if all goes well, the Supervisor should have restarted the Process already
+```
