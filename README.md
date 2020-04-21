@@ -24,3 +24,6 @@ import Logger, only: [info: 1]
 - `Import Logger` imports `Logger` module defined in `modules/logger.exs`.
 - `only: [info]` - only import `info` function
 - `info: 1` - Elixir way of saying that `info` function accepts one argument, otherwise known as `arity`
+
+## TweetSender app
+Check the [Tweet Sender README](https://github.com/Harrisonkamau/hello-elixir/blob/master/tweet_sender/README.md) to learn how to send tweets using a Mix app created under `tweet_sender` folder.
