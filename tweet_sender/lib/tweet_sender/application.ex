@@ -7,8 +7,7 @@ defmodule TweetSender.Application do
 
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: TweetSender.Worker.start_link(arg)
-      # {TweetSender.Worker, arg}
+      TweetSender.Scheduler
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

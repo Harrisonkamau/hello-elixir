@@ -22,7 +22,9 @@ defmodule TweetSender.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:credo, "~> 1.4"}
+      {:credo, "~> 1.4"},
+      {:quantum, "~> 2.4"},
+      {:extwitter, "~> 0.12.0"}
     ]
   end
 end
