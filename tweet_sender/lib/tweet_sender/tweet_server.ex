@@ -3,7 +3,7 @@ defmodule TweetSender.TweetServer do
 
   @moduledoc """
   server callbacks
-    start_link/1
+    starts the main_tweet_server
   """
   def start_link(_) do
     GenServer.start_link(__MODULE__, :ok, name: :main_tweet_server)

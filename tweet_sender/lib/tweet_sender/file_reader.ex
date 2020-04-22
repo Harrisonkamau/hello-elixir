@@ -1,10 +1,8 @@
 defmodule TweetSender.FileReader do
+  import TweetSender.Strings.Enum, only: [pick_string: 1]
+
   def strings_to_tweet(path) do
     File.read!(path)
-    |> String.split("\n")
-    |> Enum.map(&String.trim/1)
-    |> Enum.filter(&String.length(&1) <= 140)
-    |> Enum.random()
+    |> pick_string
   end
 end
-
