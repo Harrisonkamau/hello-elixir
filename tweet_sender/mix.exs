@@ -24,7 +24,9 @@ defmodule TweetSender.MixProject do
     [
       {:credo, "~> 1.4"},
       {:quantum, "~> 2.4"},
-      {:extwitter, "~> 0.12.0"}
+      {:extwitter, "~> 0.12.0"},
+      {:mock, "~> 0.3.4"},
+      {:mix_test_watch, "~> 1.0"}
     ]
   end
 end
