@@ -57,3 +57,10 @@ Start up the `Genserver` and refresh your Twitter page every minute to see the n
 # running server
 mix run --no-halt
 ```
+
+## Running tests
+Use this command to run tests:
+```sh
+# this runs all the tests
+mix test
+```
