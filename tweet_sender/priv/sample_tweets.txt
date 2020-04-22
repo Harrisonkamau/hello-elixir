@@ -1,0 +1,2 @@
+Hello world
+This tweet is going to be more than 40 characters long. As such it will be ignored by the pick_string function. This means it will not be sent to Twitter at all or even logged out to the IEX console.
