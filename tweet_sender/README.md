@@ -50,3 +50,10 @@ TweetSender.TweetServer.tweet("Hello, world!")
 
 # the tweet should send since, if all goes well, the Supervisor should have restarted the Process already
 ```
+
+#### Running the scheduler
+Start up the `Genserver` and refresh your Twitter page every minute to see the new tweets.
+```sh
+# running server
+mix run --no-halt
+```
